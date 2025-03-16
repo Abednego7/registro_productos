@@ -1,0 +1,73 @@
+===============================
+SISTEMA DE REGISTRO DE PRODUCTOS
+===============================
+
+REQUISITOS
+----------
+- PHP 8.0 o superior
+- PostgreSQL 12.0 o superior
+- XAMPP (o servidor web alternativo)
+- Extensiones PDO_PGSQL y PGSQL habilitadas en PHP
+
+PASOS DE INSTALACIÓN
+-------------------
+1. Preparar PHP para PostgreSQL:
+   - Abrir el archivo php.ini de XAMPP (ubicado en xampp/php/php.ini)
+   - Buscar y descomentar (quitar el punto y coma inicial) estas líneas:
+     extension=pdo_pgsql
+     extension=pgsql
+   - Guardar los cambios y reiniciar el servidor Apache desde el panel de control de XAMPP
+
+2. Base de datos:
+   - Instalar PostgreSQL si aún no está instalado (https://www.postgresql.org/download/)
+   - Crear una base de datos llamada "registro_productos" en PostgreSQL -> CREATE DATABASE registro_productos;
+   - Importar el archivo "sql/estructura.sql" para crear las tablas
+   - Opcionalmente, importar "sql/datos_prueba.sql" para cargar datos de ejemplo
+
+3. Configuración:
+   - Abrir el archivo "conf/config.php"
+   - Modificar las constantes DB_HOST, DB_NAME, DB_USER y DB_PASSWORD según su configuración local de PostgreSQL
+
+4. Instalación del proyecto:
+   - Copiar todos los archivos del proyecto en la carpeta htdocs de XAMPP
+     (por defecto en C:\xampp\htdocs\registro_productos)
+
+5. Acceso:
+   - Abrir en el navegador: http://localhost/registro_productos/
+   - Si todo está configurado correctamente, debería ver el formulario de registro de productos
+
+ESTRUCTURA DE DIRECTORIOS
+------------------------
+/
+├── conf/               # Archivos de configuración
+├── css/                # Hojas de estilo CSS
+├── sql/                 # Scripts SQL
+├── js/                 # Archivos JavaScript
+├── index.php           # Página principal
+└── LEEME.txt           # Este archivo
+
+VERSIONES UTILIZADAS EN DESARROLLO
+--------------------------------
+- PHP 8.2.12 (XAMPP)
+- PostgreSQL 17.4
+- Apache 2.4.58 (incluido en XAMPP)
+
+PROBLEMAS COMUNES
+---------------
+1. Error de conexión a la base de datos:
+   - Verificar que las extensiones pdo_pgsql y pgsql estén habilitadas en php.ini
+   - Confirmar que PostgreSQL esté en ejecución (verificar en el Administrador de tareas o Servicios)
+   - Revisar credenciales en config.php
+
+2. Error "could not find driver":
+   - Este error indica que la extensión PDO para PostgreSQL no está habilitada
+   - Verificar nuevamente que se hayan descomentado las líneas en php.ini
+   - Reiniciar Apache después de hacer cambios en php.ini
+
+3. No se muestran las bodegas/sucursales:
+   - Revisar que los datos de prueba se hayan cargado correctamente
+   - Verificar los permisos del usuario de base de datos
+
+4. Problema de conexión a PostgreSQL:
+   - Por defecto, PostgreSQL escucha en el puerto 5432
+   - Verificar que este puerto no esté bloqueado por el firewall
