@@ -193,7 +193,7 @@ function cargarSucursales() {
     const sucursalSelect = document.getElementById('sucursal');
 
     // Limpiar opciones actuales
-    sucursalSelect.innerHTML = '<option value="">Seleccione una sucursal</option>';
+    sucursalSelect.innerHTML = '<option value=""></option>';
 
     if (bodegaId === '') {
         return;

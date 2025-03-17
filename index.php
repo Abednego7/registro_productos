@@ -43,7 +43,7 @@ $materiales = obtenerMateriales();
                     <div class="form-group">
                         <label for="bodega">Bodega</label>
                         <select id="bodega" name="bodega">
-                            <option value="">Seleccione una bodega</option>
+                            <option value=""></option>
                             <?php foreach ($bodegas as $bodega): ?>
                                 <option value="<?php echo $bodega['id']; ?>"><?php echo $bodega['nombre']; ?></option>
                             <?php endforeach; ?>
@@ -54,7 +54,7 @@ $materiales = obtenerMateriales();
                     <div class="form-group">
                         <label for="sucursal">Sucursal</label>
                         <select id="sucursal" name="sucursal">
-                            <option value="">Seleccione una sucursal</option>
+                            <option value=""></option>
                         </select>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ $materiales = obtenerMateriales();
                     <div class="form-group">
                         <label for="moneda">Moneda</label>
                         <select id="moneda" name="moneda">
-                            <option value="">Seleccione una moneda</option>
+                            <option value=""></option>
                             <?php foreach ($monedas as $moneda): ?>
                                 <option value="<?php echo $moneda['id']; ?>"><?php echo $moneda['nombre']; ?></option>
                             <?php endforeach; ?>
